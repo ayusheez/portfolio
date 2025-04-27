@@ -46,177 +46,141 @@ function App() {
     <div className="min-h-screen bg-black text-white">
       
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-black/60 to-black/30 backdrop-blur-xl border-b border-blue-500/20 shadow-xl">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4 md:py-5">
-          {/* Logo */}
-          <h1 className="text-3xl font-extrabold tracking-widest bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent hover:scale-105 transition-all duration-700">
-            AG.
-          </h1>
-
-          <div className="flex items-center space-x-4">
-            {/* Hire Me Button */}
-            <a href="#contact" className="hidden md:inline-block px-4 py-2 text-sm rounded-full font-semibold text-white bg-gradient-to-r from-blue-500 to-pink-500 hover:scale-105 transition-all">
-              Hire Me
-            </a>
-
-            {/* Hamburger Button */}
-            <button
-              ref={buttonRef}
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-3 bg-blue-500/10 hover:bg-blue-500/20 rounded-full transition-all duration-300"
-            >
-              {isMenuOpen ? <X size={26} className="text-blue-400" /> : <Menu size={26} className="text-blue-400" />}
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      {/* Side Menu */}
-      <div className={`fixed top-0 right-0 h-full w-80 bg-black z-50 transform transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} ref={menuRef}>
-        <div className="flex flex-col h-full p-8">
-          <div className="flex justify-end mb-8">
-            <button onClick={() => setIsMenuOpen(false)} className="p-2 hover:bg-white/5 rounded-full">
-              <X size={24} />
-            </button>
-          </div>
-          <div className="flex flex-col space-y-6">
-            {[
-              { href: '#home', label: 'Home' },
-              { href: '#about', label: 'About' },
-              { href: '#skills', label: 'Skills' },
-              { href: '#projects', label: 'Projects' },
-              { href: '#experience', label: 'Experience' },
-              { href: '#contact', label: 'Contact' },
-              { href:'#home', label: 'Download Resume' }
-            ].map(({ href, label }) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-lg tracking-wide hover:text-blue-400 transition-colors duration-300 border-b border-white/5 pb-2"
-                target={href.includes('.pdf') ? '_blank' : undefined}
-                rel={href.includes('.pdf') ? 'noopener noreferrer' : undefined}
-              >
-                {label}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Main Sections */}
-      <main className="pt-24">
-        
-        {/* Hero Section */}
-          {/* Hero Section */}
-      
-      <section id="home" className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
-  {/* Background glow animation */}
-  <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-black to-black">
-    <div className="absolute top-1/4 left-1/3 w-72 h-72 bg-blue-700 rounded-full blur-3xl opacity-30 animate-pulse" />
-    <div className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-purple-600 rounded-full blur-3xl opacity-20 animate-pulse" />
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  {/* Hero Content - no box */}
-  <div className="relative z-10 text-center px-6 py-10 max-w-3xl">
-    
-    {/* Profile Image */}
-    <div className="w-36 h-36 md:w-44 md:h-44 mx-auto mb-6 rounded-full border-4 border-blue shadow-[0_0_20px_4px_rgba(255,255,255,0.6)] hover:shadow-[0_0_25px_8px_rgba(255,255,255,0.9)] transition-shadow duration-500 ease-in-out hover:scale-105 overflow-hidden">
-  <img
-    src={ayushiImage}
-    className="w-full h-full object-cover"
-    alt="Ayushi Gautam"
-  />
-</div>
-
-
-
-<h1 className="font-poppins ...">Hello I'm</h1>
-
-    <h1 className="text-4xl md:text-7xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-      Ayushi Gautam
+<nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 shadow-md transition-all duration-300">
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+    {/* Logo */}
+    <h1 className="text-3xl font-extrabold tracking-widest bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent hover:scale-105 transition-all duration-700">
+      AG.
     </h1>
 
-    <p className="text-lg md:text-xl text-blue-100/90 mb-6">
-      Software Developer
-    </p>
-
-    <p className="text-sm md:text-base text-blue-200 max-w-xl mx-auto mb-8">
-      I turn ideas into responsive, interactive web experiences ✨.
-      Passionate about frontend magic, backend logic, and building full-stack apps that solve real-world problems.
-      Exploring Java, React, and AI to level up my craft.
-    </p>
-
-    {/* Buttons */}
-    <div className="flex justify-center gap-4 flex-wrap mb-6">
-    <div className="flex flex-wrap justify-center items-center gap-4 mt-6">
-  <a
-    href="#contact"
-    className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm md:text-base font-semibold hover:scale-105 transition transform"
-  >
-    📬 Contact Me
-  </a>
-
-  <a
-    href="#projects"
-    className="px-6 py-3 border border-blue-400 text-blue-300 rounded-full text-sm md:text-base font-semibold hover:bg-blue-500/10 hover:scale-105 transition"
-  >
-    🚀 View Work
-  </a>
-
-  <a
-    href={resume}  // replace this with your actual file path
-    download
-    className="px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full text-sm md:text-base font-semibold hover:scale-105 transition transform"
-  >
-    📄 Download Resume
-  </a>
-</div>
-
-    </div>
-
-    {/* Socials */}
-    <div className="flex justify-center gap-6 text-blue-300 text-xl">
-      <a href="https://github.com/ayusheez" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:scale-110 transition">
-        <FaGithub />
+    <div className="flex items-center space-x-4">
+      {/* Hire Me Button */}
+      <a href="#contact" className="hidden md:inline-block px-4 py-2 text-sm rounded-full font-semibold text-white bg-gradient-to-r from-blue-500 to-pink-500 hover:scale-105 transition-all">
+        Hire Me
       </a>
-      <a href="https://linkedin.com/in/ayushigautam91" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:scale-110 transition">
-        <FaLinkedin />
-      </a>
-      <a href="mailto:gautamayushi91@gmail.com" className="hover:text-white hover:scale-110 transition">
-        <FaEnvelope />
-      </a>
+
+      {/* Hamburger Button */}
+      <button
+        ref={buttonRef}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="p-3 bg-blue-500/10 hover:bg-blue-500/20 rounded-full transition-all duration-300"
+      >
+        {isMenuOpen ? <X size={26} className="text-blue-400" /> : <Menu size={26} className="text-blue-400" />}
+      </button>
     </div>
   </div>
-</section>
+</nav>
 
+{/* Side Menu */}
+<div className={`fixed top-0 right-0 h-full w-80 bg-black z-50 transform transition-transform duration-300 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} ref={menuRef}>
+  <div className="flex flex-col h-full p-8">
+    <div className="flex justify-end mb-8">
+      <button onClick={() => setIsMenuOpen(false)} className="p-2 hover:bg-white/5 rounded-full">
+        <X size={24} />
+      </button>
+    </div>
+    <div className="flex flex-col space-y-6">
+      {[
+        { href: '#home', label: 'Home' },
+        { href: '#about', label: 'About' },
+        { href: '#skills', label: 'Skills' },
+        { href: '#projects', label: 'Projects' },
+        { href: '#experience', label: 'Experience' },
+        { href: '#contact', label: 'Contact' },
+        { href: '#home', label: 'Download Resume' }
+      ].map(({ href, label }) => (
+        <a
+          key={href}
+          href={href}
+          onClick={() => setIsMenuOpen(false)}
+          className="text-lg tracking-wide hover:text-blue-400 transition-colors duration-300 border-b border-white/5 pb-2"
+          target={href.includes('.pdf') ? '_blank' : undefined}
+          rel={href.includes('.pdf') ? 'noopener noreferrer' : undefined}
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
 
+{/* Main Sections */}
+<main className="pt-16">
+  {/* Hero Section */}
+  <section id="home" className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+    {/* Background glow animation */}
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 via-black to-black">
+      <div className="absolute top-1/4 left-1/3 w-72 h-72 bg-blue-700 rounded-full blur-3xl opacity-30 animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/3 w-72 h-72 bg-purple-600 rounded-full blur-3xl opacity-20 animate-pulse" />
+    </div>
 
+    {/* Hero Content */}
+    <div className="relative z-10 text-center px-6 py-10 max-w-3xl">
+      
+      {/* Profile Image */}
+      <div className="w-36 h-36 md:w-44 md:h-44 mx-auto mb-6 rounded-full border-4 border-blue shadow-[0_0_20px_4px_rgba(255,255,255,0.6)] hover:shadow-[0_0_25px_8px_rgba(255,255,255,0.9)] transition-shadow duration-500 ease-in-out hover:scale-105 overflow-hidden">
+        <img
+          src={ayushiImage}
+          className="w-full h-full object-cover"
+          alt="Ayushi Gautam"
+        />
+      </div>
 
+      <h1 className="font-poppins text-blue-300 text-sm mb-2 tracking-wider uppercase">Hello I'm</h1>
+
+      <h1 className="text-4xl md:text-7xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+        Ayushi Gautam
+      </h1>
+
+      <p className="text-lg md:text-xl text-blue-100/90 mb-6">
+        Software Developer
+      </p>
+
+      <p className="text-sm md:text-base text-blue-200 max-w-xl mx-auto mb-8">
+        I turn ideas into responsive, interactive web experiences ✨.
+        Passionate about frontend magic, backend logic, and building full-stack apps that solve real-world problems.
+        Exploring Java, React, and AI to level up my craft.
+      </p>
+
+      {/* Buttons */}
+      <div className="flex flex-wrap justify-center items-center gap-4 mt-6">
+        <a
+          href="#contact"
+          className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm md:text-base font-semibold hover:scale-105 transition transform"
+        >
+          📬 Contact Me
+        </a>
+
+        <a
+          href="#projects"
+          className="px-6 py-3 border border-blue-400 text-blue-300 rounded-full text-sm md:text-base font-semibold hover:bg-blue-500/10 hover:scale-105 transition"
+        >
+          🚀 View Work
+        </a>
+
+        <a
+          href={resume}
+          download
+          className="px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full text-sm md:text-base font-semibold hover:scale-105 transition transform"
+        >
+          📄 Download Resume
+        </a>
+      </div>
+
+      {/* Socials */}
+      <div className="flex justify-center gap-6 text-blue-300 text-xl mt-6">
+        <a href="https://github.com/ayusheez" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:scale-110 transition">
+          <FaGithub />
+        </a>
+        <a href="https://linkedin.com/in/ayushigautam91" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:scale-110 transition">
+          <FaLinkedin />
+        </a>
+        <a href="mailto:gautamayushi91@gmail.com" className="hover:text-white hover:scale-110 transition">
+          <FaEnvelope />
+        </a>
+      </div>
+    </div>
+  </section>
 
 
 
