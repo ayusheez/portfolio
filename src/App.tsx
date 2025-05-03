@@ -47,9 +47,9 @@ function App() {
       
       {/* Navbar */}
 <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10 shadow-md transition-all duration-300">
-  <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+  <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2 md:py-3">
     {/* Logo */}
-    <h1 className="text-3xl font-extrabold tracking-widest bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent hover:scale-105 transition-all duration-700">
+    <h1 className="text-2xl md:text-3xl font-extrabold tracking-widest bg-gradient-to-r from-blue-500 to-pink-500 bg-clip-text text-transparent hover:scale-105 transition-all duration-700">
       AG.
     </h1>
 
@@ -105,7 +105,7 @@ function App() {
 </div>
 
 {/* Main Sections */}
-<main className="pt-16">
+<main className="pt-12 md:pt-14">
   {/* Hero Section */}
   <section id="home" className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
     {/* Background glow animation */}
@@ -115,7 +115,7 @@ function App() {
     </div>
 
     {/* Hero Content */}
-    <div className="relative z-10 text-center px-6 py-10 max-w-3xl">
+    <div className="relative z-10 text-center px-4 py-6 md:py-10 max-w-3xl">
       
       {/* Profile Image */}
       <div className="w-36 h-36 md:w-44 md:h-44 mx-auto mb-6 rounded-full border-4 border-blue shadow-[0_0_20px_4px_rgba(255,255,255,0.6)] hover:shadow-[0_0_25px_8px_rgba(255,255,255,0.9)] transition-shadow duration-500 ease-in-out hover:scale-105 overflow-hidden">
@@ -181,7 +181,6 @@ function App() {
       </div>
     </div>
   </section>
-
 
 
 
