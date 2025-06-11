@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Code, Briefcase, User, Cpu, Send, FileText, GraduationCap } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
-import ayushiImage from './images/ayy.jpg';
+import ayushiImage from './images/ayy.png';
 import Multicloud from './images/Multicloud.jpeg';
 import coming_soon from './images/coming_soon.jpeg';
 import fake_invoice from './images/fake_invoice.jpeg';
 import song from './images/song2.jpeg';
-import food from './images/food.jpeg';
+import food from './images/fem.png';
 
 import resume from './images/ayushi-resume.pdf';
 import certificate1 from './images/infosys.pdf';
@@ -121,7 +121,7 @@ function App() {
       <div className="w-36 h-36 md:w-44 md:h-44 mx-auto mb-6 rounded-full border-4 border-blue shadow-[0_0_20px_4px_rgba(255,255,255,0.6)] hover:shadow-[0_0_25px_8px_rgba(255,255,255,0.9)] transition-shadow duration-500 ease-in-out hover:scale-105 overflow-hidden">
         <img
           src={ayushiImage}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
           alt="Ayushi Gautam"
         />
       </div>
@@ -231,7 +231,7 @@ function App() {
 >
   <img
     src={ayushiImage}
-    className="w-full h-full object-cover"
+    className="w-full h-full object-cover object-top"
     alt="Ayushi Gautam"
   />
 </motion.div>
@@ -400,10 +400,10 @@ function App() {
     link: 'http://multicloud-woad.vercel.app',
   },
   {
-    title: 'Desi Delights',
-    description: 'A delightful Homemade Indian Food store .',
+    title: 'FemCare',
+    description: 'AI Based Health Recommendation (GMM) .',
     image: food,
-    link: 'https://sparkling-banoffee-533c2a.netlify.app/',
+    link: 'https://fem-care-five.vercel.app/',
   },
   {
     title: 'MoodMate',
