@@ -158,13 +158,15 @@ function App() {
           🚀 View Work
         </a>
 
-        <a
-          href={resume}
-          download
-          className="px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full text-sm md:text-base font-semibold hover:scale-105 transition transform"
-        >
-          📄 Download Resume
-        </a>
+       <a
+         href={resume}
+        target="_blank"
+        rel="noopener noreferrer"
+         className="px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full text-sm md:text-base font-semibold hover:scale-105 transition transform"
+>
+  📄 View Resume
+</a>
+
       </div>
 
       {/* Socials */}
