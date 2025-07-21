@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react';
 import { Send, Mail, Linkedin, Github } from 'lucide-react';
-import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
 const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
@@ -10,7 +9,6 @@ const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
 
-  // Initialize EmailJS with the public key once
   useEffect(() => {
     emailjs.init(publicKey);
   }, []);
@@ -45,50 +43,73 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative py-20 px-4 bg-black overflow-hidden">
-      <motion.div
-        className="relative z-10 max-w-7xl mx-auto"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
+    <section id="contact" className="py-20 px-4 bg-black text-white">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
         <div className="flex items-center space-x-2 mb-12">
           <Send className="text-blue-500" size={28} />
-          <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-white">Get in Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Get in Touch</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {/* Contact Information */}
-          <motion.div className="bg-white/5 p-8 rounded-xl backdrop-blur-xl">
-            <p className="text-gray-300 mb-8">
-              I'm always open to new collaborations! Drop a message anytime.
+          {/* Contact Info */}
+          <div className="bg-white/5 p-8 rounded-xl backdrop-blur-xl border border-white/10 shadow-md">
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              I’m always open to collaborating on meaningful projects, freelance opportunities, or just a tech talk over coffee ☕.
             </p>
-            <div className="space-y-4">
-              <a href="mailto:gautamayushi91@gmail.com" className="flex items-center space-x-3 text-blue-400">
+
+            <div className="space-y-4 text-blue-400 text-sm">
+              <a href="mailto:gautamayushi91@gmail.com" className="flex items-center space-x-3 hover:text-white transition">
                 <Mail size={18} />
                 <span>gautamayushi91@gmail.com</span>
               </a>
-              <a href="https://linkedin.com/in/ayushigautam91" target="_blank" className="flex items-center space-x-3 text-blue-400">
+              <a href="https://linkedin.com/in/ayushigautam91" target="_blank" className="flex items-center space-x-3 hover:text-white transition">
                 <Linkedin size={18} />
-                <span>linkedin.com/in/ayushigautam</span>
+                <span>linkedin.com/in/ayushigautam91</span>
               </a>
-              <a href="https://github.com/ayusheez" target="_blank" className="flex items-center space-x-3 text-blue-400">
+              <a href="https://github.com/ayusheez" target="_blank" className="flex items-center space-x-3 hover:text-white transition">
                 <Github size={18} />
-                <span>github.com/ayushigautam</span>
+                <span>github.com/ayusheez</span>
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Contact Form */}
-          <motion.form ref={form} onSubmit={handleSubmit} className="space-y-4 bg-white/5 p-8 rounded-xl backdrop-blur-xl">
-            <input type="text" name="name" placeholder="Your Name" required className="w-full p-3 rounded-lg bg-blue-900/40 border border-blue-500/50 text-white" />
-            <input type="email" name="email" placeholder="Your Email" required className="w-full p-3 rounded-lg bg-blue-900/40 border border-blue-500/50 text-white" />
-            <textarea name="message" placeholder="Your Message" rows={4} required className="w-full p-3 rounded-lg bg-blue-900/40 border border-blue-500/50 text-white"></textarea>
-            <button type="submit" className="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-semibold">Send Message</button>
-          </motion.form>
+          <form
+            ref={form}
+            onSubmit={handleSubmit}
+            className="space-y-4 bg-white/5 p-8 rounded-xl backdrop-blur-xl border border-white/10 shadow-md"
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              className="w-full p-3 rounded-lg bg-blue-950/40 border border-blue-500/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+              className="w-full p-3 rounded-lg bg-blue-950/40 border border-blue-500/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows={4}
+              required
+              className="w-full p-3 rounded-lg bg-blue-950/40 border border-blue-500/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            ></textarea>
+            <button
+              type="submit"
+              className="w-full py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-semibold transition"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
