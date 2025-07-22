@@ -137,7 +137,7 @@ function App() {
     </h1>
 
     <p className="text-lg md:text-xl text-gray-300 font-medium mb-5">
-      Full Stack Developer | JavaScript | React | Java
+      Full Stack Developer
     </p>
 
     {/* Short Bio */}
